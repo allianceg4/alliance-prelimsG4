@@ -14,39 +14,39 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import Entity.Ticket;
-import Service.TicketService;
+import Service.ITicketService;
 
 @RestController
 public class TicketController {
 
-	private TicketService service;
+	private ITicketService service;
 	
 	@Autowired
-	public TicketController (final TicketService service) {
+	public TicketController (final ITicketService service) {
 		this.service = service;
 	}
 	
 	//gets the ticket id
-	@RequestMapping("/user/(id)")
+	@RequestMapping("/ticket/{id}")
 	public String getTicketId(@PathVariable final int id) {
 		return service.findById(id);
 	}
 	
 	//gets all the ticket id
-	@RequestMapping("/user")
+	@RequestMapping("/ticket")
 	public String getAllTicket() {
 		return service.findAll();
 	}
 	
 	//post map and save ticket
-	@PostMapping("/user")
+	@PostMapping("/ticket")
 	public int saveTicket (final HttpServletRequest request) throws IOException{
 		final BufferedReader body = request.getReader();
 		return service.createTicket(body);
 	}
 	
 	//post map and update ticket assignee
-	@PostMapping("/user/{id}")
+	@PostMapping("/ticket/{id}")
 	public int updateTicket(@PathVariable final int id, @RequestParam("ticket") final Ticket ticket, 
 			@RequestParam("assignee") final String assginee, @RequestParam("status") final String status, 
 			@RequestParam("subject") final String subject, @RequestParam("description") final String description,
@@ -54,21 +54,21 @@ public class TicketController {
 		return service.updateTicket(ticket);
 	}
 	
-	@PostMapping("/user/{id}")
+	@PostMapping("/ticket/{id}")
 	public int updateTicketStatus(@PathVariable final int id, @RequestParam("status") final String status) throws IOException {
 		return service.updateTicketStatus(id, status);
 	}
 	
-	@PostMapping("/user/{id}")
+	@PostMapping("/ticket/{id}")
 	public int updateTicketAssignee(@PathVariable final int id, @RequestParam("assignee") final String assignee) throws IOException {
 		return service.updateTicketAssignee(id, assignee);
 	}
 	
 	//deletes element
-	@DeleteMapping("/user/delete/{id}")
+	@DeleteMapping("/ticket/delete/{id}")
 	public int deleteTicket (@PathVariable final int id) throws IOException{
 		return service.deleteTicket(id);
 	}
 	
-	}
+}
 	
