@@ -9,9 +9,6 @@ public class Ticket {
 	private String subject;
 	private String description;
 	private String tracker;
-
-	
-	
 	
 	public Ticket (final int ticketID, final String assignee, final String status, final String subject, final String description, final String tracker)
 	{

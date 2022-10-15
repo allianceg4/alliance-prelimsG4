@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.google.gson.Gson;
 
 import Entity.Ticket;
+import Repository.ITicketRepository;
 
 
 @Service
@@ -37,26 +38,26 @@ public class TicketService implements ITicketService{
 	{
 		final Ticket ticket = gson.fromJson(body, Ticket.class);
  
-		return repository.save(ticket);
+		return repository.createTicket(ticket);
 	}
 	
 	public int updateTicket(final Ticket ticket)
 	{
-		return repository.updateByID(ticket);
+		return repository.updateTicket(ticket);
 	}
 	
-	public int updateTicketStatus(final Ticket ticket, final String status)
+	public int updateTicketStatus(final Ticket ticket)
 	{
-		return repository.updateByID(ticket, status);
+		return repository.updateTicketStatus(ticket);
 	}
 	
-	public int updateTicketAssignee(final Ticket ticket, final String assignee)
+	public int updateTicketAssignee(final Ticket ticket)
 	{
-		return repository.updateByID(ticket, assignee);
+		return repository.updateTicketAssignee(ticket);
 	}
 	
 	public int deleteTicket(final int id)
 	{
-		return repository.deleteByID(id);
+		return repository.deleteTicket(id);
 	}
 }

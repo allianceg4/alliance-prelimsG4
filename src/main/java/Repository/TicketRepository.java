@@ -34,7 +34,7 @@ public class TicketRepository {
 	public int createTicket(final Ticket ticket)
 	{
 		final String sql = "INSERT INTO tickets (ticketid, assignee, status, subject, description, tracker) VALUES (?, ?, ?, ?, ?, ?)";
-		final int result = template.update(sql, ticket.getTicketID(), ticket.getAssignee(), ticket.getStatus(), ticket.getSubject, ticket.getDescription, ticket.getTracker);
+		final int result = template.update(sql, ticket.getTicketID(), ticket.getAssignee(), ticket.getStatus(), ticket.getSubject(), ticket.getDescription(), ticket.getTracker());
  
 		return result;
 	}
@@ -42,7 +42,7 @@ public class TicketRepository {
 	public int updateTicket(final Ticket ticket)
 	{
 		final String sql = "UPDATE tickets SET assignee=?, status=?, subject=?, description=?, tracker=? WHERE ticketid=?";
-		final int result = template.update(sql, ticket.getAssignee(), ticket.getStatus(), ticket.getSubject, ticket.getDescription, ticket.getTracker, ticket.getTicketID());
+		final int result = template.update(sql, ticket.getAssignee(), ticket.getStatus(), ticket.getSubject(), ticket.getDescription(), ticket.getTracker(), ticket.getTicketID());
  
 		return result;
 	}
