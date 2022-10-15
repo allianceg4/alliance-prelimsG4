@@ -46,14 +46,14 @@ public class TicketService implements ITicketService{
 		return repository.updateTicket(ticket);
 	}
 	
-	public int updateTicketStatus(final Ticket ticket)
+	public int updateTicketStatus(final int id, final String status)
 	{
-		return repository.updateTicketStatus(ticket);
+		return repository.updateTicketStatus(id, status);
 	}
 	
-	public int updateTicketAssignee(final Ticket ticket)
+	public int updateTicketAssignee(final int id, final String assignee)
 	{
-		return repository.updateTicketAssignee(ticket);
+		return repository.updateTicketAssignee(id, assignee);
 	}
 	
 	public int deleteTicket(final int id)

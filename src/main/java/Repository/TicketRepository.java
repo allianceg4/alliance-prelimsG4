@@ -47,18 +47,18 @@ public class TicketRepository {
 		return result;
 	}
 	
-	public int updateTicketStatus(final Ticket ticket)
+	public int updateTicketStatus(final int id, final String status)
 	{
 		final String sql = "UPDATE tickets SET status=? WHERE ticketid=?";
-		final int result = template.update(sql, ticket.getStatus(), ticket.getTicketID());
+		final int result = template.update(sql, status, id);
  
 		return result;
 	}
 	
-	public int updateTicketAssignee(final Ticket ticket)
+	public int updateTicketAssignee(final int id, final String assignee)
 	{
 		final String sql = "UPDATE tickets SET assignee=? WHERE ticketid=?";
-		final int result = template.update(sql, ticket.getAssignee(), ticket.getTicketID());
+		final int result = template.update(sql, assignee, id);
  
 		return result;
 	}
