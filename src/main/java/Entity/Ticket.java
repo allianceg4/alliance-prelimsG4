@@ -23,16 +23,16 @@ public class Ticket {
 		this.tracker = tracker;
 	}
 	
-	public int getticketID() {
+	public int getTicketID() {
 		return ticketID;
 	}
-	public void setticketID(int ticketID) {
+	public void setTicketID(int ticketID) {
 		this.ticketID = ticketID;
 	}
-	public String getassignee() {
+	public String getAssignee() {
 		return assignee;
 	}
-	public void setassignee(String assignee) {
+	public void setAssignee(String assignee) {
 		this.assignee = assignee;
 	}
 
@@ -51,11 +51,11 @@ public class Ticket {
 	public void setSubject(String subject) {
 		this.subject = subject;
 	}	
-	public String getdescription() {
+	public String getDescription() {
 		return description;
 	}
 
-	public void setdescription(String description) {
+	public void setDescription(String description) {
 		this.description = description;
 	}
 
