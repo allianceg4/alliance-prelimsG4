@@ -1,8 +1,8 @@
-package Repository;
+package ph.com.alliance.prelims.g4.ticket.repository;
 
 import java.util.List;
 
-import Entity.Ticket;
+import ph.com.alliance.prelims.g4.ticket.entity.Ticket;
 
 public interface ITicketRepository {
 	public Ticket findById(final int id);
@@ -12,5 +12,4 @@ public interface ITicketRepository {
 	public int updateTicketStatus(final int id, final String status);
 	public int updateTicketAssignee(final int id, final String assignee);
 	public int deleteTicket(final int id);
-	
 }
