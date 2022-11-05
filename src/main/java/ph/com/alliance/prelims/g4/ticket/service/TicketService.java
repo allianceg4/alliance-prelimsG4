@@ -32,10 +32,8 @@ public class TicketService implements ITicketService {
 		return gson.toJson(repository.findAll());
 	}
 	
-	public int createTicket(final BufferedReader body)
+	public int createTicket(Ticket ticket)
 	{
-		final Ticket ticket = gson.fromJson(body, Ticket.class);
- 
 		return repository.createTicket(ticket);
 	}
 	

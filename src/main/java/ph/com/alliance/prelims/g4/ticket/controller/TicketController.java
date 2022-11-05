@@ -1,9 +1,6 @@
 package ph.com.alliance.prelims.g4.ticket.controller;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -39,10 +36,9 @@ private ITicketService service;
 	}
 	
 	//post map and save ticket
-	@PostMapping("/ticket")
-	public int saveTicket (final HttpServletRequest request) throws IOException{
-		final BufferedReader body = request.getReader();
-		return service.createTicket(body);
+	@PostMapping("/ticket/create")
+	public int createTicket (Ticket ticket) {
+		return service.createTicket(ticket);
 	}
 	
 	//post map and update ticket assignee
