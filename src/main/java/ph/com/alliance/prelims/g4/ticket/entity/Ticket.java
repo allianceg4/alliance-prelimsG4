@@ -1,26 +1,20 @@
 package ph.com.alliance.prelims.g4.ticket.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 //Ticket ID, Assignee, Status, Subject, Description, and Tracker
 
+@Entity
 public class Ticket {
+	
+	@Id
 	private int ticketID;
 	private String assignee;
 	private String status;
 	private String subject;
 	private String description;
 	private String tracker;
-	
-	public Ticket() {}
-	
-	public Ticket (final int ticketID, final String assignee, final String status, final String subject, final String description, final String tracker)
-	{
-		this.ticketID = ticketID;
-		this.assignee = assignee;
-		this.status = status;
-		this.subject = subject;
-		this.description = description;
-		this.tracker = tracker;
-	}
 	
 	public int getTicketID() {
 		return ticketID;
