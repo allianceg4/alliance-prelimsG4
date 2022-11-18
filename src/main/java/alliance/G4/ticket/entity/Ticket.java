@@ -1,4 +1,4 @@
-package ph.com.alliance.prelims.g4.ticket.entity;
+package alliance.G4.ticket.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

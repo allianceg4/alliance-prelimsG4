@@ -1,4 +1,4 @@
-package ph.com.alliance.prelims.g4.ticket;
+package alliance.G4.ticket;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
