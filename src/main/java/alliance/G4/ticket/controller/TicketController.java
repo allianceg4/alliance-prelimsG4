@@ -71,13 +71,13 @@ public class TicketController {
 	
 
 	//deletes the ticket via id
-	@PostMapping("/ticket/delete/{id}")
+	@DeleteMapping("/ticket/delete/{id}")
 	@ResponseBody
 	public ApiResponse deleteTicket(@PathVariable int id) throws IOException {
 
 		service.deleteTicket(id);
 		
-		return ApiResponse.CreateSuccess(TicketMessages.TICKET_SUCCESSFULLY_SAVED);
+		return ApiResponse.CreateSuccess(TicketMessages.TICKET_SUCCESS_DELETE);
 	}
 	
 }
