@@ -77,7 +77,7 @@ public class TicketController {
 
 		service.deleteTicket(id);
 		
-		return ApiResponse.CreateSuccess(TicketMessages.TICKET_SUCCESSFULLY_SAVED);
+		return ApiResponse.CreateSuccess(TicketMessages.TICKET_SUCCESS_DELETE);
 	}
 	
 }
