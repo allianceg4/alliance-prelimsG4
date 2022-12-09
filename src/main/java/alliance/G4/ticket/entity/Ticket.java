@@ -1,41 +1,50 @@
 package alliance.G4.ticket.entity;
 
+import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
-//Ticket ID, Assignee, Status, Subject, Description, and Tracker
 
 @Entity
 public class Ticket {
 	
 	@Id
 	private int ticketID;
-	private String assignee;
-	private String status;
+	private int userID;
+	private int statusID;
 	private String subject;
 	private String description;
-	private String tracker;
+	private Date date;
+	private float amount;
+	private int hasconfirm;
+	private int hasproof;
+	private int transaction;
+	private int hasinvoice;
+	private int ismatched;
+	private int iscredited;
 	
 	public int getTicketID() {
 		return ticketID;
 	}
+	
 	public void setTicketID(int ticketID) {
 		this.ticketID = ticketID;
 	}
-	public String getAssignee() {
-		return assignee;
+	
+	public int getUserID() {
+		return userID;
 	}
-	public void setAssignee(String assignee) {
-		this.assignee = assignee;
+	
+	public void setUserID(int userID) {
+		this.userID = userID;
 	}
-
-	public String getStatus() {
-		return status;
+	
+	public int getStatusID() {
+		return statusID;
 	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}	
+	
+	public void setStatusID(int statusID) {
+		this.statusID = statusID;
+	}
 	
 	public String getSubject() {
 		return subject;
@@ -44,6 +53,7 @@ public class Ticket {
 	public void setSubject(String subject) {
 		this.subject = subject;
 	}	
+	
 	public String getDescription() {
 		return description;
 	}
@@ -51,12 +61,69 @@ public class Ticket {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-	public String getTracker() {
-		return tracker;
+	
+	public Date getDate() {
+		return date;
 	}
 
-	public void setTracker(String tracker) {
-		this.tracker = tracker;
-	}	
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
+	public float getAmount() {
+		return amount;
+	}
+
+	public void setAmount(float amount) {
+		this.amount = amount;
+	}
+	
+	public int getHasConfirm() {
+		return hasconfirm;
+	}
+
+	public void setHasConfirm(int hasconfirm) {
+		this.hasconfirm = hasconfirm;
+	}
+	
+	public int getHasProof() {
+		return hasproof;
+	}
+
+	public void setHasProof(int hasproof) {
+		this.hasproof = hasproof;
+	}
+	
+	public int getTransaction() {
+		return transaction;
+	}
+
+	public void setTransaction(int transaction) {
+		this.transaction = transaction;
+	}
+	
+	public int getHasInvoice() {
+		return hasinvoice;
+	}
+
+	public void setHasInvoice(int hasinvoice) {
+		this.hasinvoice = hasinvoice;
+	}
+	
+	public int getIsMatched() {
+		return ismatched;
+	}
+
+	public void setIsMatched(int ismatched) {
+		this.ismatched = ismatched;
+	}
+	
+	public int getIsCredited() {
+		return iscredited;
+	}
+
+	public void setIsCredited(int iscredited) {
+		this.iscredited = iscredited;
+	}
+
 }

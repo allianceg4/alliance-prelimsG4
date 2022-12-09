@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,6 +24,7 @@ public class TicketController {
 	@Autowired
 	private ITicketService service;
 	
+	//Save Ticket
 	@PostMapping("/ticket/save")
 	@ResponseBody
 	public ApiResponse saveTicket(Ticket ticket) throws IOException {
@@ -39,7 +39,7 @@ public class TicketController {
 	}
 
 	
-	//gets the ticket via id
+	//Get Ticket via ID
 	@RequestMapping("/ticket/{id}")
 	@ResponseBody
 	public ApiResponse getTicket(@PathVariable int id) throws IOException {
@@ -54,7 +54,7 @@ public class TicketController {
 	}
 	
 	
-	//gets all the ticket
+	//Get All Tickets
 	@RequestMapping("/ticket")
 	@ResponseBody
 	public ApiResponse getAll() throws IOException {
@@ -70,8 +70,8 @@ public class TicketController {
 	
 	
 
-	//deletes the ticket via id
-	@PostMapping("/ticket/delete/{id}")
+	//Deletes Ticket via ID
+	@DeleteMapping("/ticket/delete/{id}")
 	@ResponseBody
 	public ApiResponse deleteTicket(@PathVariable int id) throws IOException {
 
