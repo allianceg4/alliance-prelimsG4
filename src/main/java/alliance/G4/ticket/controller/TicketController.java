@@ -55,7 +55,7 @@ public class TicketController {
 	
 	
 	//Get All Tickets
-	@RequestMapping("/ticket")
+	@RequestMapping("/tickets")
 	@ResponseBody
 	public ApiResponse getAll() throws IOException {
 
